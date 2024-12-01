@@ -1,0 +1,55 @@
+body{
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#story-container{
+  max-width: 700px;
+  text-align: center;
+}
+
+button{
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px;
+  padding: 10px 20px;
+  background: #007000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+button:hover{
+  font-family: 'Montserrat', sans-serif;
+  background: #005500; 
+}
+
+.typing {
+  display: inline-block;
+  position: relative;
+}
+
+.cursor {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  white-space: nowrap;
+  background-color: white;
+  animation: blink 0.4s step-end infinite alternate;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
