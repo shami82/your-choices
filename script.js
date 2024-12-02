@@ -356,7 +356,7 @@ renderScene();
 
 
 //particle effect for bg
-const particleCount = 10; 
+const particleCount = 16; 
 const container = document.getElementById('particle-container');
 
 for (let i = 0; i < particleCount; i++) {
