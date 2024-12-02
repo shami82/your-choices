@@ -295,7 +295,7 @@ let currentIndex = 0;
 
 function typeWriterEffect(element, text, callback) {
   let i = 0;
-  const interval = 50; // Typing speed in milliseconds
+  const interval = 50; 
   element.innerHTML = ""; 
 
   // Create cursor element
@@ -315,7 +315,7 @@ function typeWriterEffect(element, text, callback) {
       }
     } else {
       clearInterval(typingInterval);
-      cursor.style.opacity = 0; // Hide the cursor after typing finishes
+      cursor.style.opacity = 0; 
       if (callback) callback();
     }
   }, interval);
@@ -323,19 +323,16 @@ function typeWriterEffect(element, text, callback) {
 
 function renderScene() {
   const container = document.getElementById("story-container");
-  container.innerHTML = ""; // Clear previous content
+  container.innerHTML = ""; 
 
   const scene = scenes[currentIndex];
   const text = document.createElement("p");
-  text.className = "typing"; // Add the typing effect style
+  text.className = "typing"; 
   container.appendChild(text);
 
-  // Prepare text with line breaks
   const contextText = scene.text.replace(/\n/g, "<br>");
 
-  // Perform typewriter effect
   typeWriterEffect(text, contextText, () => {
-    // Render choices after typing effect finishes
     if (scene.choices) {
       const choices = document.createElement("div");
       choices.className = "choices";
@@ -345,7 +342,7 @@ function renderScene() {
         button.textContent = choice.text;
         button.onclick = () => {
           currentIndex = choice.nextScene;
-          renderScene(); // Re-render to show next scene
+          renderScene(); 
         };
         choices.appendChild(button);
       });
@@ -355,9 +352,28 @@ function renderScene() {
   });
 }
 
-// Initial call to render the scene
 renderScene();
 
 
+//particle effect for bg
+const particleCount = 10; 
+const container = document.getElementById('particle-container');
 
+for (let i = 0; i < particleCount; i++) {
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
 
+  const x = Math.random() * 100; 
+  const y = Math.random() * 100;
+
+  //random animation duration and delay
+  const duration = 3 + Math.random() * 5; 
+  const delay = Math.random() * 5; 
+
+  particle.style.top = `${y}%`;
+  particle.style.left = `${x}%`;
+  particle.style.animationDuration = `${duration}s`;
+  particle.style.animationDelay = `${delay}s`;
+
+  container.appendChild(particle);
+}

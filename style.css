@@ -54,7 +54,36 @@ button:hover{
   }
 }
 
+/*particle effect*/
 
+#particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background: #121212; 
+}
+
+.particle {
+  position: absolute;
+  width: 5px; 
+  height: 8px;
+  background-color: #008000;
+  border-radius: 0%;
+  opacity: 0; 
+  animation: fade 2s infinite ease-in-out; 
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
 
 
 
